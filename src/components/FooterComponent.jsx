@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FooterComponent = () => {
   return (
     <div className="footer py-5">
-    <Container>
+    <Container data-aos="fade-up" data-aos-duration="1500">
       <Row className="d-flex justify-content-between">
         <Col lg="5">
           <h3 className="fw-bold">JobSheetKu</h3>

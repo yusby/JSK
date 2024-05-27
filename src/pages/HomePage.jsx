@@ -21,16 +21,16 @@ function HomePage() {
       <Container>
         <Row className="header-box d-flex align-items-center">
           <Col lg="6">
-            <img src={HeroImage} alt="Hero-gif" />
+            <img src={HeroImage} alt="Hero-gif" className="animate__animated animate__fadeInDownBig"/>
           </Col>
           <Col lg="6">
-            <h1 className="mb-4">
+            <h1 className="mb-4 animate__animated animate__fadeInRightBig animate__delay-1s">
               Belajar di <br /> <span>Jobsheetku</span>
             </h1>
-            <p>
-            Selamat datang di platform inovatif kami yang menghadirkan pembelajaran keamanan Siber yang praktis dan menyeluruh melalui berbagai metode multimedia!
+            <p className="animate__animated animate__fadeInRightBig animate__delay-1s">
+            Selamat datang di platform inovatif kami yang menghadirkan pembelajaran yang praktis dan menyeluruh melalui berbagai metode multimedia!
             </p>
-            <button className="header-btn btn-lg rounded-1 me-2">Lihat Kelas</button>
+            <button className="header-btn btn-lg rounded-1 me-2 animate__animated animate__zoomIn animate__delay-2s" onClick={()=>navigate("/kelas")}>Lihat Kelas</button>
           </Col>
         </Row>
       </Container>
@@ -46,11 +46,10 @@ function HomePage() {
             <Row>
               {kelasTerbaru.map((kelas)=>{
                 return (
-                <Col key={kelas.id} className="shadow rounded">
+                <Col key={kelas.id} className="shadow rounded" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay={kelas.delay}>
                   <img src={kelas.image} alt="unsplash.com" className="mb-5 rounded-top"/>
                   <h5 className="mb-5 px-3" >{kelas.title}</h5>
                   <div className="text-center pb-3"> 
-                  <button className="btn btn-primary">{kelas.buy}</button>
                   </div>
                 </Col>
               );
@@ -58,7 +57,7 @@ function HomePage() {
             </Row>
             <Row>
               <Col className="text-center">
-                <button className="btn btn-primary rounded-5 btn-lg" onClick={()=>navigate("/kelas")}>
+                <button className="btn btn-primary rounded-5 btn-lg" onClick={()=>navigate("/kelas")} data-aos="zoom-in-up" data-aos-duration="1000">
                   Lihat Semua Kelas
                   <i className="fa-solid fa-chevron-right ms-3"></i>
                 </button>
@@ -70,10 +69,10 @@ function HomePage() {
             <Container>
               <Row>
                 <Col>
-                  <h1 className="text-center fw-bold my-5">Feedback</h1>
+                  <h1 className="text-center fw-bold my-5" data-aos="fade-left" data-aos-duration="1000">Feedback</h1>
                 </Col>
               </Row>
-              <Row>
+              <Row data-aos="fade-left" data-aos-duration="1000">
                   <Swiper
                 slidesPerView={1}
                 spaceBetween={10}
