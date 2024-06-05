@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { keamananjaringan } from '../data/jobsheet';
+import { keamananjaringan } from '../data/keamananjaringan';
 
 const KeamananJaringan = () => {
   return (
@@ -18,17 +18,19 @@ const KeamananJaringan = () => {
           {keamananjaringan.map((jobsheet) => (
             <Row key={jobsheet.id} className="mb-3 justify-content-center">
               <Col md={8}>
-                <Card className="text-center">
-                  <Card.Header>{jobsheet.title}</Card.Header>
+                <Card className="text-start"> {/* Menambahkan kelas text-start di sini */}
+                  <Card.Header className="text-center">{jobsheet.title}</Card.Header> {/* Header tetap di tengah */}
                   <Card.Body>
-                    <Card.Title>Tentang</Card.Title>
-                    <Card.Text>{jobsheet.desc}</Card.Text>
-                    {jobsheet.faculty && <Card.Text>{jobsheet.faculty}</Card.Text>}
-                    {jobsheet.studyProgram && <Card.Text>{jobsheet.studyProgram}</Card.Text>}
-                    {jobsheet.course && <Card.Text>{jobsheet.course}</Card.Text>}
-                    {jobsheet.semester && <Card.Text>{jobsheet.semester}</Card.Text>}
-                    {jobsheet.timeAllocation && <Card.Text>{jobsheet.timeAllocation}</Card.Text>}
-                    <NavLink to="/jobsheet2" className="btn btn-primary">Mulai</NavLink>
+                    <Card.Title className="text-start">Tentang</Card.Title>
+                    <Card.Text className="text-start">{jobsheet.desc}</Card.Text>
+                    {jobsheet.faculty && <Card.Text className="text-start">{jobsheet.faculty}</Card.Text>}
+                    {jobsheet.studyProgram && <Card.Text className="text-start">{jobsheet.studyProgram}</Card.Text>}
+                    {jobsheet.course && <Card.Text className="text-start">{jobsheet.course}</Card.Text>}
+                    {jobsheet.semester && <Card.Text className="text-start">{jobsheet.semester}</Card.Text>}
+                    {jobsheet.timeAllocation && <Card.Text className="text-start">{jobsheet.timeAllocation}</Card.Text>}
+                    <div className="d-flex justify-content-center mt-3">
+                      <NavLink to={jobsheet.NavLink} className="btn btn-primary">Mulai</NavLink>
+                    </div>
                   </Card.Body>
                 </Card>
               </Col>

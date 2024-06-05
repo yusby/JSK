@@ -8,7 +8,9 @@ import FeedBackPage from "./pages/FeedBackPage"
 import FaqPage from "./pages/FaqPage"
 import SkPage from "./pages/SkPage"
 import KeamananJaringan from "./pages/keamananjaringanPage"
-import Jobsheet2 from "./pages/Jobsheet2"
+import BruteForce from "./pages/BruteForcePage"
+import KonfigurasiAwal from "./pages/KonfigurasiAwal"
+import PortScanning from "./pages/PortScanningPage"
 
 function App() {
   return <div>
@@ -20,7 +22,9 @@ function App() {
       <Route path="/faq"Component={FaqPage}/>
       <Route path="/sk"Component={SkPage}/>
       <Route path="/keamananjaringan"Component={KeamananJaringan}/>
-      <Route path="/jobsheet2"Component={Jobsheet2}/>
+      <Route path="/bruteforce"Component={BruteForce}/>
+      <Route path="/konfigurasiawal"Component={KonfigurasiAwal}/>
+      <Route path="/portscanning"Component={PortScanning}/>
     </Routes>
     <FooterComponent/>
   </div>
